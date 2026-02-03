@@ -1,0 +1,258 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "toc_visible": true,
+      "authorship_tag": "ABX9TyM9ITj4ibfnT2wN24OMcqni",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/kunalssharma125-pixe/machinelearning1/blob/main/correlation%20\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "a2twc0zvhber"
+      },
+      "outputs": [],
+      "source": [
+        "import numpy as np\n",
+        "x = np.array([1,3,5,7,8,9, 10, 15])\n",
+        "y = np.array([10, 20, 30, 40, 50, 60, 70, 80])"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "CORRELATION USING FORMULA\n",
+        "\n",
+        "\n"
+      ],
+      "metadata": {
+        "id": "FOo9iZIjibcT"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "CORRELATION IN INCAREASING ORDER"
+      ],
+      "metadata": {
+        "id": "wMn8zwUcoJNp"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Pearson_correlation(X,Y):\n",
+        "    if len(X)==len(Y):\n",
+        "        Sum_xy = sum((X-X.mean())*(Y-Y.mean()))\n",
+        "        Sum_x_squared = sum((X-X.mean())**2)\n",
+        "        Sum_y_squared = sum((Y-Y.mean())**2)\n",
+        "        corr = Sum_xy / np.sqrt(Sum_x_squared * Sum_y_squared)\n",
+        "    return corr\n",
+        "\n",
+        "print(Pearson_correlation(x,y))\n",
+        "print(Pearson_correlation(x,x))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "mb23DAjnig-7",
+        "outputId": "a4d25e16-d4ad-4545-c298-a96cf1bcb58f"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "0.974894414261588\n",
+            "1.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "CORRELATION IN RANDOM ORDER"
+      ],
+      "metadata": {
+        "id": "6otuzbPioUOS"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "x1 = np.array([11,15,7,6,20,9])\n",
+        "y1 = np.array([10,8,15,17,12,80])"
+      ],
+      "metadata": {
+        "id": "vYaTDji2jl-a"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Pearson_correlation(X,Y):\n",
+        "    if len(X)==len(Y):\n",
+        "        Sum_xy = sum((X-X.mean())*(Y-Y.mean()))\n",
+        "        Sum_x_squared = sum((X-X.mean())**2)\n",
+        "        Sum_y_squared = sum((Y-Y.mean())**2)\n",
+        "        corr = Sum_xy / np.sqrt(Sum_x_squared * Sum_y_squared)\n",
+        "    return corr\n",
+        "print(Pearson_correlation(x1,y1))\n",
+        "print(Pearson_correlation(x1,x1))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "ERCuz-6CjMG6",
+        "outputId": "d6695317-bb23-457d-890b-0d859e9f64b9"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-0.2874267800244464\n",
+            "1.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "CORRELATION IN DECREASING ORDER"
+      ],
+      "metadata": {
+        "id": "V6SdGuJaoYSB"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import numpy as np\n",
+        "x2 = np.array([1,3,5,7,8,9,10,15])\n",
+        "y2 = np.array([80,70,60,50,40,30,20,10])"
+      ],
+      "metadata": {
+        "id": "_WIQJ8EOkrKL"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def Pearson_correlation(X,Y):\n",
+        "    if len(X)==len(Y):\n",
+        "        Sum_xy = sum((X-X.mean())*(Y-Y.mean()))\n",
+        "        Sum_x_squared = sum((X-X.mean())**2)\n",
+        "        Sum_y_squared = sum((Y-Y.mean())**2)\n",
+        "        corr = Sum_xy / np.sqrt(Sum_x_squared * Sum_y_squared)\n",
+        "    return corr\n",
+        "print(Pearson_correlation(x2,y2))\n",
+        "print(Pearson_correlation(x2,x2))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "06VdG2yzktir",
+        "outputId": "c166d5f2-6f49-4f01-9121-1c290bcbcceb"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "-0.974894414261588\n",
+            "1.0\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "df = pd.read_csv('insurance latest one  - insurance.csv')"
+      ],
+      "metadata": {
+        "id": "zkoUZfvEqTvI"
+      },
+      "execution_count": 9,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "corr=df.corr(method='pearson')\n",
+        "corr\n",
+        "print(corr)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "CPch8vzlrRHh",
+        "outputId": "9e33d09b-602e-4001-d0ad-39038fc224a6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "                 age  Unnamed: 1       bmi  children  Unnamed: 4  Unnamed: 5  \\\n",
+            "age         1.000000         NaN  0.111555  0.042824         NaN         NaN   \n",
+            "Unnamed: 1       NaN         NaN       NaN       NaN         NaN         NaN   \n",
+            "bmi         0.111555         NaN  1.000000  0.012732         NaN         NaN   \n",
+            "children    0.042824         NaN  0.012732  1.000000         NaN         NaN   \n",
+            "Unnamed: 4       NaN         NaN       NaN       NaN         NaN         NaN   \n",
+            "Unnamed: 5       NaN         NaN       NaN       NaN         NaN         NaN   \n",
+            "charges     0.296712         NaN  0.200110  0.068240         NaN         NaN   \n",
+            "\n",
+            "             charges  \n",
+            "age         0.296712  \n",
+            "Unnamed: 1       NaN  \n",
+            "bmi         0.200110  \n",
+            "children    0.068240  \n",
+            "Unnamed: 4       NaN  \n",
+            "Unnamed: 5       NaN  \n",
+            "charges     1.000000  \n"
+          ]
+        }
+      ]
+    }
+  ]
+}
